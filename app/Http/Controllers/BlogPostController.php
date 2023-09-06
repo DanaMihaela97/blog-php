@@ -81,4 +81,10 @@ class BlogPostController extends Controller
         $blogPost->delete();
         return redirect('/blog');
     }
+    public function welcome(){
+        $posts = BlogPost::all();
+        return view('welcome', [
+            'posts'=>$posts
+        ]);
+    }
 }
